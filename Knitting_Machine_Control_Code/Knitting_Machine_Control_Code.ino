@@ -1,10 +1,11 @@
 #include <Servo.h>
+static int time = 1000; //delay between servo movements, in ms
 static int numLoops = 10; //the number of loops initially cast on
 
 // pin assignations
 static int startservopin = 1;
 static int endservopin = 1;
-static int tilterservopin = 1;
+static int tiltservopin = 1;
 static int rotationalhookservopin = 1;
 static int thrusthookservopin = 1;
 static int chainservopin = 1;
@@ -46,7 +47,7 @@ int thrustCentre; //centred position at beginning
 
 //chainservo positions
 //knitstitch
-int chainend;
+int chainStart;
 int chainEnd;
 int chainCentre; //centred position at beginning
 
@@ -56,7 +57,7 @@ Servo startservo; //servo that first grabs the
                   //loop from the needle in knitstich
 Servo endservo; //servo that places the completed loop 
               // on the end needle in knitstitch
-Servo tilter; //servo that tilts the T manipulator back and forth
+Servo tiltservo; //servo that tilts the T manipulator back and forth
 Servo rotationalhookservo; //servo that controls crochet hook rotation
 Servo thrusthookservo;    // servo that controls crochet hook thrusts
 Servo chainservo;       //servo that controls chain movement
@@ -66,7 +67,7 @@ Servo chainservo;       //servo that controls chain movement
 void setup(){
   startservo.attach(startservopin);
   endservo.attach(endservopin);
-  tilter.attach(tilterservopin);
+  tiltservo.attach(tiltservopin);
   rotationalhookservo.attach(rotationalhookservopin);
   thrusthookservo.attach(thrusthookservopin);
   chainservo.attach(chainservopin);
@@ -76,21 +77,60 @@ void setup(){
 
 void loop(){
   
-  knitstitch();
+  leftknitstitch();
+  rightknitstitch();
   delay(15);
 }
 
 centreservos(){
   startservo.write(startCentre);
   endservo.write(endCentre);
-  tilter.write(tiltCentre);
+  tiltservo.write(tiltCentre);
   rotationalhookservo.write(rotCentre);
   thrusthookservo.write(thrustCentre);
   chainservo.write(chainCentre);
 }
 
-knitstitch(){
-  chainservo.write();
+leftknitstitch(){
+  while(int i = 0; i < numLoops; i++){
+  tiltservo.write(tiltTilt);
+  delay(time);
+  chainservo.write(chainStart);
+  delay(time);
+  tiltServo.write(tiltCentre);
+  delay(time);
+  startservo.write(startGrab);
+  delay(time);
+  startservo.write(startHole);
+  delay(time);
+  tiltservo.write(tiltTilt);
+  delay(time);
+  rotationalhookservo.write(rotLeft);
+  delay(time);
+  thrusthookservo.write(thrustOut);
+  delay(time);
+  thrusthookservo.write(thrustIn);
+  delay(time);
+  startservo.write(startRelease);
+  delay(time);
+  thrusthookservo.write(thrustOut);
+  delay(time);
+  endservo.write(endHole);
+  delay(time);
+  thrusthookservo.write(rotRight);
+  delay(time);
+  thrusthookservo.write(thrustIn);
+  delay(time);
+  tiltservo.write(tiltCentre);
+  delay(time);
+  endservo.write(endRelease);
+  delay(time);
+  }
+  
+  
+  
+  
+  
   
   
 }
