@@ -55,8 +55,10 @@ int chainCentre; //centred position at beginning
 
 Servo startservo; //servo that first grabs the 
                   //loop from the needle in knitstich
+                  // 'leftmost' servo
 Servo endservo; //servo that places the completed loop 
               // on the end needle in knitstitch
+              // 'rightmost' servo
 Servo tiltservo; //servo that tilts the T manipulator back and forth
 Servo rotationalhookservo; //servo that controls crochet hook rotation
 Servo thrusthookservo;    // servo that controls crochet hook thrusts
@@ -102,6 +104,8 @@ void leftknitstitch(){
     delay(time);
     startservo.write(startGrab);
     delay(time);
+    chainservo.write(chainCentre);
+    delay(time);
     startservo.write(startHole);
     delay(time);
     tiltservo.write(tiltTilt);
@@ -124,6 +128,8 @@ void leftknitstitch(){
     delay(time);
     tiltservo.write(tiltCentre);
     delay(time);
+    chainservo.write(chainEnd);
+    delay(time);
     endservo.write(endRelease);
     delay(time);
     i++;
@@ -136,11 +142,13 @@ void rightknitstitch(){
   while(i < numLoops){
     tiltservo.write(tiltTilt);
     delay(time);
-    chainservo.write(chainStart);
+    chainservo.write(chainEnd);
     delay(time);
     tiltservo.write(tiltCentre);
     delay(time);
     endservo.write(endGrab);
+    delay(time);
+    chainservo.write(chainCentre);
     delay(time);
     endservo.write(endHole);
     delay(time);
@@ -163,6 +171,8 @@ void rightknitstitch(){
     thrusthookservo.write(thrustIn);
     delay(time);
     tiltservo.write(tiltCentre);
+    delay(time);
+    chainservo.write(chainStart);
     delay(time);
     startservo.write(startRelease);
     delay(time);
