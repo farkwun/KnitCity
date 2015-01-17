@@ -12,4 +12,4 @@ First, stitches must be cast on. The [long tailed cast on](https://www.youtube.c
 ##resources
 The T-manipulator works by using two claws to transfer loops of yarn, and one crochet hook to pull a new loop of yarn through loops from the previous row. Additional explanatory diagrams and the cost of some of the parts can be found [here](https://docs.google.com/document/d/1izEyOQ_KWICfKyjrefoc_-a8f4IfAC1EF__0_PTAb98/edit?usp=sharing)
 
-The frame of the T-manipulator is 3D printed (links to 3D models to be added soon).
+The frame of the T-manipulator is 3D printed.
