@@ -9,32 +9,46 @@ static int rotationalhookservopin = 1;
 static int thrusthookservopin = 1;
 static int chainservopin = 1;
 
+//positions are represented by int 0-180
+
+
 //startservo positions
-int holeposition; //when the startservo is in this position
-                  //the startservo grabber is positioned 
-                  //directly above the crochet hook hole
-//knitstitch
-int 
+int startHole; //above hole
+int startGrab; //about to grab yarn
+int startRelease; //release
+int startCentre; //centred position at beginning
+
 
 //endservo positions
 //knitstitch
+int endHole; //above hole
+int endGrab; //about to grab yarn
+int endRelease; //release
+int endCentre; //centred position at beginning
 
 
 //tilterservo positions
 //knitstitch
-
+int tiltTilt;
+int tiltCentre;
 
 //rotationalhookservo positions
 //knitstitch
-
+int rotLeft;
+int rotRight;
+int rotCentre; //centred position at beginning
 
 //thrusthookservo positions
 //knitstitch
-
+int thrustOut;
+int thrustIn;
+int thrustCentre; //centred position at beginning
 
 //chainservo positions
 //knitstitch
-
+int chainend;
+int chainEnd;
+int chainCentre; //centred position at beginning
 
 
 
