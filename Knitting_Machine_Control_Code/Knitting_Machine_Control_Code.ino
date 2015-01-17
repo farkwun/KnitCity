@@ -35,8 +35,8 @@ int tiltCentre;
 
 //rotationalhookservo positions
 //knitstitch
-int rotLeft;
-int rotRight;
+int rotHookUp;
+int rotHookDown;
 int rotCentre; //centred position at beginning
 
 //thrusthookservo positions
@@ -82,7 +82,7 @@ void loop(){
   delay(15);
 }
 
-centreservos(){
+void centreservos(){
   startservo.write(startCentre);
   endservo.write(endCentre);
   tiltservo.write(tiltCentre);
@@ -91,13 +91,14 @@ centreservos(){
   chainservo.write(chainCentre);
 }
 
-leftknitstitch(){
-  while(int i = 0; i < numLoops; i++){
+void leftknitstitch(){
+  int i = 0;
+  while(i < numLoops){
     tiltservo.write(tiltTilt);
     delay(time);
     chainservo.write(chainStart);
     delay(time);
-    tiltServo.write(tiltCentre);
+    tiltservo.write(tiltCentre);
     delay(time);
     startservo.write(startGrab);
     delay(time);
@@ -105,7 +106,7 @@ leftknitstitch(){
     delay(time);
     tiltservo.write(tiltTilt);
     delay(time);
-    rotationalhookservo.write(rotLeft);
+    rotationalhookservo.write(rotHookUp);
     delay(time);
     thrusthookservo.write(thrustOut);
     delay(time);
@@ -117,7 +118,7 @@ leftknitstitch(){
     delay(time);
     endservo.write(endHole);
     delay(time);
-    thrusthookservo.write(rotRight);
+    thrusthookservo.write(rotHookDown);
     delay(time);
     thrusthookservo.write(thrustIn);
     delay(time);
@@ -125,17 +126,19 @@ leftknitstitch(){
     delay(time);
     endservo.write(endRelease);
     delay(time);
+    i++;
   }
     
 }
 
-rightknitstitch(){
-  while(int i = 0; i < numLoops; i++){
+void rightknitstitch(){
+  int i = 0;
+  while(i < numLoops){
     tiltservo.write(tiltTilt);
     delay(time);
     chainservo.write(chainStart);
     delay(time);
-    tiltServo.write(tiltCentre);
+    tiltservo.write(tiltCentre);
     delay(time);
     endservo.write(endGrab);
     delay(time);
@@ -143,7 +146,7 @@ rightknitstitch(){
     delay(time);
     tiltservo.write(tiltTilt);
     delay(time);
-    rotationalhookservo.write(rotLeft);
+    rotationalhookservo.write(rotHookUp);
     delay(time);
     thrusthookservo.write(thrustOut);
     delay(time);
@@ -155,7 +158,7 @@ rightknitstitch(){
     delay(time);
     startservo.write(startHole);
     delay(time);
-    thrusthookservo.write(rotRight);
+    thrusthookservo.write(rotHookDown);
     delay(time);
     thrusthookservo.write(thrustIn);
     delay(time);
@@ -163,6 +166,7 @@ rightknitstitch(){
     delay(time);
     startservo.write(startRelease);
     delay(time);
+    i++;
   }
     
 }
