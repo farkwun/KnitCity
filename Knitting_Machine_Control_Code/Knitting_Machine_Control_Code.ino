@@ -80,13 +80,13 @@ void loop(){
   delay(15);
 }
 
-insertservos(){
-  startservo.write(0);
-  endservo.attach(0);
-  tilter.attach(0);
-  rotationalhookservo.attach(0);
-  thrusthookservo.attach(0);
-  chainservo.attach(0);
+centreservos(){
+  startservo.write(startCentre);
+  endservo.attach(endCentre);
+  tilter.attach(tiltCentre);
+  rotationalhookservo.attach(rotCentre);
+  thrusthookservo.attach(thrustCentre);
+  chainservo.attach(chainCentre);
 }
 
 knitstitch(){
