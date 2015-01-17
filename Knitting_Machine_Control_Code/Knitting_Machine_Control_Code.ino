@@ -1,5 +1,5 @@
 #include <Servo.h>
-static int numloops = 10; //the number of loops initially cast on
+static int numLoops = 10; //the number of loops initially cast on
 
 // pin assignations
 static int startservopin = 1;
