@@ -126,12 +126,43 @@ leftknitstitch(){
     endservo.write(endRelease);
     delay(time);
   }
-  
-  
-  
-  
-  
-  
-  
+    
 }
 
+rightknitstitch(){
+  while(int i = 0; i < numLoops; i++){
+    tiltservo.write(tiltTilt);
+    delay(time);
+    chainservo.write(chainStart);
+    delay(time);
+    tiltServo.write(tiltCentre);
+    delay(time);
+    endservo.write(endGrab);
+    delay(time);
+    endservo.write(endHole);
+    delay(time);
+    tiltservo.write(tiltTilt);
+    delay(time);
+    rotationalhookservo.write(rotLeft);
+    delay(time);
+    thrusthookservo.write(thrustOut);
+    delay(time);
+    thrusthookservo.write(thrustIn);
+    delay(time);
+    endservo.write(endRelease);
+    delay(time);
+    thrusthookservo.write(thrustOut);
+    delay(time);
+    startservo.write(startHole);
+    delay(time);
+    thrusthookservo.write(rotRight);
+    delay(time);
+    thrusthookservo.write(thrustIn);
+    delay(time);
+    tiltservo.write(tiltCentre);
+    delay(time);
+    startservo.write(startRelease);
+    delay(time);
+  }
+    
+}
