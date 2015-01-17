@@ -82,11 +82,11 @@ void loop(){
 
 centreservos(){
   startservo.write(startCentre);
-  endservo.attach(endCentre);
-  tilter.attach(tiltCentre);
-  rotationalhookservo.attach(rotCentre);
-  thrusthookservo.attach(thrustCentre);
-  chainservo.attach(chainCentre);
+  endservo.write(endCentre);
+  tilter.write(tiltCentre);
+  rotationalhookservo.write(rotCentre);
+  thrusthookservo.write(thrustCentre);
+  chainservo.write(chainCentre);
 }
 
 knitstitch(){
