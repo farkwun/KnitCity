@@ -10,9 +10,11 @@ static int thrusthookservopin = 1;
 static int chainservopin = 1;
 
 //startservo positions
-
+int holeposition; //when the startservo is in this position
+                  //the startservo grabber is positioned 
+                  //directly above the crochet hook hole
 //knitstitch
-
+int 
 
 //endservo positions
 //knitstitch
