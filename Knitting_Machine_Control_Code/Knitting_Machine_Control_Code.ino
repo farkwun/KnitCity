@@ -1,14 +1,15 @@
 #include <Servo.h>
+
 static int time = 1000; //delay between servo movements, in ms
 static int numLoops = 10; //the number of loops initially cast on
 
 // pin assignations
-static int startservopin = 1;
-static int endservopin = 1;
-static int tiltservopin = 1;
-static int rotationalhookservopin = 1;
-static int thrusthookservopin = 1;
-static int chainservopin = 1;
+static int startservopin = 2;
+static int endservopin = 3;
+static int tiltservopin = 4;
+static int rotationalhookservopin = 5;
+static int thrusthookservopin = 6;
+static int chainservopin = 7;
 
 //positions are represented by int 0-180
 
